@@ -1,4 +1,5 @@
 const game = {
+  prevGuesses: []
   title: 'Guess the Number!',
   biggestNum: 100,
   smallestNum: 1,
