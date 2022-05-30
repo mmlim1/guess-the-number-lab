@@ -5,10 +5,18 @@ const game = {
   smallestNum: 1,
   secretNum: null,
   play: function() {
+    let curGuess
     this.secretNum = Math.floor(Math.random() * 
     (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
     console.log(this.secretNum)
-  },
+    while (this.prevGuesses[this.prevGuesses.length-1] !==this.secretNum) {
+      this.getGuess()
+      this.prevGuesses.push(this.curGuess)
+    //if (this.prevGuesses[this.prevGuesses.length-1] > this.secrectNum) {
+
+    }
+  }
+},
   getGuess: function() {
     let curGuess
     while (!curGuess || curGuess < this.smallestNum || curGuess > this.biggestNum) {
@@ -20,7 +28,7 @@ const game = {
   
 }
 
-game.getGuess()
+
 game.play()
 
 console.log(game)
