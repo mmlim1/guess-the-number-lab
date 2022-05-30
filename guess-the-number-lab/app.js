@@ -1,5 +1,4 @@
 const game = {
-  prevGuesses: []
   title: 'Guess the Number!',
   biggestNum: 100,
   smallestNum: 1,
@@ -8,4 +7,8 @@ const game = {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
   }
+
 }
+
+game.prevGuesses = []
+// console.log(game)
