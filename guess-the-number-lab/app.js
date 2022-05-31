@@ -1,5 +1,5 @@
 const game = {
-  prevGuesses: [],
+  prevGuesses:[],
   title: 'Guess the Number!',
   biggestNum: 100,
   smallestNum: 1,
@@ -8,12 +8,11 @@ const game = {
     this.secretNum = Math.floor(Math.random() * 
     (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
     console.log(this.secretNum)
-    while (this.prevGuesses[this.prevGuesses.length-1] !== this.secretNum) {
-      this.getGuess()
-      this.prevGuesses.push(this.getGuess)
-      console.log(this.prevGuesses)
-      this.render() 
-    } 
+    do {
+    this.prevGuesses.push(this.getGuess())
+    console.log(this.prevGuesses)
+    this.render() }
+    while (this.prevGuesses[this.prevGuesses.length-1] !== this.secretNum) 
   },
   render: function() {
     if (this.prevGuesses[this.prevGuesses.length-1] === this.secrectNum) {
